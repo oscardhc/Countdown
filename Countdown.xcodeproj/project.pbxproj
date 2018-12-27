@@ -14,6 +14,7 @@
 		557E1AEB21D3DBED00177569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557E1AE921D3DBED00177569 /* LaunchScreen.storyboard */; };
 		557E1AF621D3DBED00177569 /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E1AF521D3DBED00177569 /* CountdownTests.swift */; };
 		557E1B0121D3DBED00177569 /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E1B0021D3DBED00177569 /* CountdownUITests.swift */; };
+		557E1B0F21D3DE6C00177569 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E1B0E21D3DE6C00177569 /* Exam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		557E1AFC21D3DBED00177569 /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		557E1B0021D3DBED00177569 /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		557E1B0221D3DBED00177569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		557E1B0E21D3DE6C00177569 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				557E1AE021D3DBE900177569 /* AppDelegate.swift */,
 				557E1AE221D3DBE900177569 /* ViewController.swift */,
+				557E1B0E21D3DE6C00177569 /* Exam.swift */,
 				557E1AE421D3DBE900177569 /* Main.storyboard */,
 				557E1AE721D3DBED00177569 /* Assets.xcassets */,
 				557E1AE921D3DBED00177569 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				557E1AE321D3DBE900177569 /* ViewController.swift in Sources */,
 				557E1AE121D3DBE900177569 /* AppDelegate.swift in Sources */,
+				557E1B0F21D3DE6C00177569 /* Exam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,11 +16,13 @@ var charColor: UIColor!
 var type = 0
 var cgView = CGView()
 var cirView = [UIImageView]()
-var imgView = UIImageView()
+//var imgView = UIImageView()
+var imgView = UIButton()
 var scrView = UIScrollView()
 var hjView = UIImageView()
 var up: Double!
 var down: Double!
+var imgidx = 1;
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
@@ -137,8 +139,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             cirView[cnt].frame = CGRect(x: 0, y: 0, width: 1, height: 1)
             scrView.addSubview(cirView[cnt])
         }
-        imgView = UIImageView(image: UIImage(named: "2.jpg"))
-        imgView.frame = CGRect(x: Double(xx / 2 - 75) , y: Double(self.view.bounds.maxY) - 150 - down, width: 150.0, height: 150.0)
+        imgView = UIButton(frame: CGRect(x: Double(xx / 2 - 75) , y: Double(self.view.bounds.maxY) - 150 - down, width: 150.0, height: 150.0))
+        imgView.setImage(UIImage(named: "2.jpg"), for: .normal)
+        imgView.adjustsImageWhenHighlighted = false
+        imgView.addTarget(for: .touchUpInside) { (a: UIButton) in
+            if imgidx == 0 {
+                a.setImage(UIImage(named: "2.jpg"), for: .normal)
+            } else {
+                a.setImage(UIImage(named: "0\(imgidx).png"), for: .normal)
+            }
+            imgidx = (imgidx + 1) % 7;
+        }
+        
         self.view.addSubview(imgView)
     }
     func clearView() {
@@ -152,7 +164,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         imgView.removeFromSuperview()
         cirView = [UIImageView]()
-        imgView = UIImageView()
+        imgView = UIButton()
         llable = [UILabel]()
         rlable = [UILabel]()
     }
@@ -161,14 +173,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         DataManager.clear()
         exams = [Exam]()
         
-        exams.append(Exam(_time: "2018-12-26 14:30:00", _title: "形势与政策", _timeStr: "12月26日\n14:30"));
+        exams.append(Exam(_time: "2018-12-26 14:30:00", _title: "形势与政策", _timeStr: "12月26日\n14:30"))
 //        exams.append(Exam(_time: "2018-12-27 14:00:00", _title: "大学英语3 小测", _timeStr: "12月27日\n14:00"));
-        exams.append(Exam(_time: "2018-12-29 10:30:00", _title: "大学英语", _timeStr: "12月29日\n10:30"));
-        exams.append(Exam(_time: "2019-01-03 10:30:00", _title: "线性代数", _timeStr: "1月3日\n10:30"));
-        exams.append(Exam(_time: "2019-01-04 10:30:00", _title: "思想道德修养与法律基础", _timeStr: "1月4日\n10:30"));
-        exams.append(Exam(_time: "2019-01-07 13:10:00", _title: "计算机科学导论", _timeStr: "1月7日\n13:10"));
-        exams.append(Exam(_time: "2019-01-10 08:00:00", _title: "数学分析(A类)(1)", _timeStr: "1月10日\n8:00"));
-        exams.append(Exam(_time: "2019-01-11 13:10:00", _title: "程序设计(A类)", _timeStr: "1月11日\n13:10"));
+        exams.append(Exam(_time: "2018-12-29 10:30:00", _title: "大学英语", _timeStr: "12月29日\n10:30"))
+        exams.append(Exam(_time: "2019-01-03 10:30:00", _title: "线性代数", _timeStr: "1月3日\n10:30"))
+        exams.append(Exam(_time: "2019-01-04 10:30:00", _title: "思想道德修养与法律基础", _timeStr: "1月4日\n10:30"))
+        exams.append(Exam(_time: "2019-01-07 13:10:00", _title: "计算机科学导论", _timeStr: "1月7日\n13:10"))
+        exams.append(Exam(_time: "2019-01-10 08:00:00", _title: "数学分析(A类)(1)", _timeStr: "1月10日\n8:00"))
+        exams.append(Exam(_time: "2019-01-11 13:10:00", _title: "程序设计(A类)", _timeStr: "1月11日\n13:10"))
+        exams.append(Exam(_time: "2019-02-25 08:00:00", _title: "开学", _timeStr: "2月25e日\n08:00"))
         
         for exm in exams {
             exm.save()
